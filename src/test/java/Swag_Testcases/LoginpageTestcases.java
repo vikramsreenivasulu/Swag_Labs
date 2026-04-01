@@ -20,6 +20,8 @@ public class LoginpageTestcases {
 	@Test()
 	public void Attest() throws InterruptedException {
 		BaseClass.Sleep();
-		loginpage_methods.swag_labs_methods.xxx();
+		loginpage_methods.swag_labs_methods.swag_labs_loginpage.ClickLoginBotton();
+		loginpage_methods.swag_labs_methods.swag_labs_loginpage.UserIds();
+
 	}
 }
