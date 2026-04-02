@@ -38,6 +38,12 @@ public class Loginpage_Locators {
 			@FindBy(xpath="//div[@class='login_password']")
 			public WebElement Password;
 			
+			@FindBy(xpath="(//input[contains(@class,'input_error form_input')])[1]")
+			public WebElement SendUserId;
+			
+			@FindBy(xpath="(//input[@class='input_error form_input'])[2]")
+			public WebElement SendPassword;
+			
 			@FindBy(xpath="//input[@class='submit-button btn_action']")
 			public WebElement LoginButton;
 			

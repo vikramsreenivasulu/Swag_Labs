@@ -1,6 +1,8 @@
 package Swag_ActionMethods;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.WebElement;
 
@@ -25,20 +27,31 @@ public class LoginPage_Methods {
 		}
 		public class Swag_Labs_LoginPage{
 			
-			public void UserIds() {
-			
-				String text = swag_labs_locators.swag_labs_locators.swag_labs_loginpage.loginCredentials.getText();
-
-				// Split by new line
-				String[] users = text.split("\n");
-
-				// First line is heading → skip it
-				for(int i = 1; i < users.length; i++) {
-				    System.out.println(users[i]);
+				public String getRandomUser() {
+				
+				    String text = swag_labs_locators.swag_labs_locators
+				                    .swag_labs_loginpage.loginCredentials.getText();
+				
+				    String[] users = text.split("\n");
+				
+				    List<String> userList = new ArrayList<>();
+				    
+				    for(int i = 1; i < users.length; i++) {
+				        userList.add(users[i].trim());
+				    }
+				
+				    Random rand = new Random();
+				    int randomIndex = rand.nextInt(userList.size());
+				
+				    String randomUser = userList.get(randomIndex);
+				
+				    System.out.println("Selected User: " + randomUser);
+				
+				    swag_labs_locators.swag_labs_locators.swag_labs_loginpage.SendUserId.sendKeys(randomUser);
+				    
+				    return randomUser;
+				 
 				}
-
-				Password();
-			}
 			
 			public void Password() {
 				String text = swag_labs_locators.swag_labs_locators.swag_labs_loginpage.Password.getText();
@@ -47,6 +60,8 @@ public class LoginPage_Methods {
 				String password = parts[1];
 
 				System.out.println("Password: "+password);
+				
+				swag_labs_locators.swag_labs_locators.swag_labs_loginpage.SendPassword.sendKeys(password);
 			}
 			public void ClickLoginBotton() {
 				swag_labs_locators.swag_labs_locators.swag_labs_loginpage.LoginButton.click();
