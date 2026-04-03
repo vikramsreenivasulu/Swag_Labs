@@ -24,29 +24,35 @@ public class BaseClass {
     }
 
     // ✅ Missing method add chesam
-	public static ChromeOptions getChromeOptions() {
+    public static ChromeOptions getChromeOptions() {
 
-		// chrome browser automated by pop
-		ChromeOptions options = new ChromeOptions();
-		options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
-		options.setExperimentalOption("useAutomationExtension", false);
+        ChromeOptions options = new ChromeOptions();
 
-		// dress pop
-		options.addArguments("--disable-autofill");
-		options.addArguments("--disable-popup-blocking");
-		options.addArguments("--disable-notifications");
-		options.addArguments("--ignore-ssl-errors=yes");
-		options.addArguments("--ignore-certificate-errors");
-		options.addArguments("disable-infobars");
-		options.addArguments("--disable-translate");
+        options.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+        options.setExperimentalOption("useAutomationExtension", false);
 
-		//
-		Map<String, Object> prefs = new HashMap<>();
-		prefs.put("credentials_enable_service", false);
-		prefs.put("profile.password_manager_enabled", false);
-		options.setExperimentalOption("prefs", prefs);
-		return options;
-	}
+        options.addArguments("--disable-autofill");
+        options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-notifications");
+        options.addArguments("--ignore-ssl-errors=yes");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--disable-translate");
+
+        Map<String, Object> prefs = new HashMap<>();
+
+        // already you added
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+
+        // 🔥 ADD THESE (important)
+        prefs.put("profile.password_manager_leak_detection", false);
+        prefs.put("profile.default_content_setting_values.notifications", 2);
+
+        options.setExperimentalOption("prefs", prefs);
+
+        return options;
+    }
 
 	public static void Sleep() throws InterruptedException {
 		// TODO Auto-generated method stub

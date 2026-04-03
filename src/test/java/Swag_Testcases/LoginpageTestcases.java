@@ -23,7 +23,8 @@ public class LoginpageTestcases {
 		loginpage_methods.swag_labs_methods.swag_labs_loginpage.getRandomUser();
 		loginpage_methods.swag_labs_methods.swag_labs_loginpage.Password();
 		loginpage_methods.swag_labs_methods.swag_labs_loginpage.ClickLoginBotton();
-	
-
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.ClickMenuButton();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.sidebarmethods.Hover_AllItems();
 	}
-}
+	
+}//LoginpageTestcases

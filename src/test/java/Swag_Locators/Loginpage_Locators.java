@@ -11,19 +11,23 @@ import Utility.BaseClass;
 public class Loginpage_Locators {
 	
 	public Swag_Labs_Locators swag_labs_locators;
+	
 
 	public Loginpage_Locators() {
 		
 		swag_labs_locators = new Swag_Labs_Locators();
+		
 	}
 	
 	public class Swag_Labs_Locators{
 
 		public Swag_Labs_LoginPage swag_labs_loginpage;
+		public Swag_Labs_ProductPage swag_labs_productpage;
 		public Swag_Labs_Locators() {
 			
 			PageFactory.initElements(BaseClass.driver, this);
 			swag_labs_loginpage = new Swag_Labs_LoginPage();
+			swag_labs_productpage = new Swag_Labs_ProductPage();
 		}
 	
 		public class Swag_Labs_LoginPage{
@@ -51,5 +55,32 @@ public class Loginpage_Locators {
 		}//Swag_Labs_LoginPage
 		
 	
+		public class Swag_Labs_ProductPage{
+			
+			public SideBarLocators sidebarlocators;
+			public Swag_Labs_ProductPage() {
+				PageFactory.initElements(BaseClass.driver, this);
+				sidebarlocators = new SideBarLocators();
+			}
+			
+			@FindBy(id="react-burger-menu-btn")
+			public WebElement MenuButton;
+			
+			public class SideBarLocators{
+				
+				public SideBarLocators() {
+					PageFactory.initElements(BaseClass.driver, this);
+				}
+				
+				@FindBy(id="inventory_sidebar_link")
+				public WebElement XXX;
+				
+			}//SidebarLocators
+			
+		}//Swag_Labs_ProductPage
+		
+		
+		
+		
 	}//Swag_Labs_Locators
 }

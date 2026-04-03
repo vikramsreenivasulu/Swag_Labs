@@ -22,8 +22,10 @@ public class LoginPage_Methods {
 	public class Swag_Labs_Methods{
 		
 		public Swag_Labs_LoginPage swag_labs_loginpage;
+		public Swag_Labs_ProductPage swag_labs_productpage;
 		public Swag_Labs_Methods() {
 			swag_labs_loginpage = new Swag_Labs_LoginPage();
+			swag_labs_productpage = new Swag_Labs_ProductPage();
 		}
 		public class Swag_Labs_LoginPage{
 			
@@ -68,9 +70,26 @@ public class LoginPage_Methods {
 			}
 			
 			
-		}
+		}//Swag_Labs_LoginPage
 		
-		
+		public class Swag_Labs_ProductPage{
+			
+			public SideBarMethods sidebarmethods;
+			public Swag_Labs_ProductPage() {
+				sidebarmethods = new SideBarMethods();
+			}
+			public void ClickMenuButton() {
+				swag_labs_locators.swag_labs_locators.swag_labs_productpage.MenuButton.click();
+			}
+			
+			public class SideBarMethods{
+				
+				public void Hover_AllItems() {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.XXX.click();
+				}
+			}//SideBar
+			
+		}//Swag_Labs_ProductPage
 		
 		
 	}//Swag_Labs_Methods
