@@ -1,5 +1,6 @@
 package Swag_Testcases;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -19,12 +20,17 @@ public class LoginpageTestcases {
 	
 	@Test()
 	public void Attest() throws InterruptedException {
+		
 		BaseClass.Sleep();
 		loginpage_methods.swag_labs_methods.swag_labs_loginpage.getRandomUser();
 		loginpage_methods.swag_labs_methods.swag_labs_loginpage.Password();
 		loginpage_methods.swag_labs_methods.swag_labs_loginpage.ClickLoginBotton();
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.ClickMenuButton();
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.sidebarmethods.Hover_AllItems();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.ProductItemOne("Sauce Labs Bike Light");
+		
+	
+		
 	}
 	
 }//LoginpageTestcases

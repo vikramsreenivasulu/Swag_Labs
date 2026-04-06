@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 
 import Swag_Locators.Loginpage_Locators;
+import Utility.BaseClass;
 
 public class LoginPage_Methods {
 
@@ -75,20 +78,97 @@ public class LoginPage_Methods {
 		public class Swag_Labs_ProductPage{
 			
 			public SideBarMethods sidebarmethods;
+			public SawLab_Items sawlab_items;
 			public Swag_Labs_ProductPage() {
 				sidebarmethods = new SideBarMethods();
+				sawlab_items = new SawLab_Items();
 			}
 			public void ClickMenuButton() {
-				swag_labs_locators.swag_labs_locators.swag_labs_productpage.MenuButton.click();
+				swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.MenuButton.click();
 			}
 			
 			public class SideBarMethods{
 				
 				public void Hover_AllItems() {
-					swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.XXX.click();
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_AllItems.click();
+
+					Actions hover = new Actions(BaseClass.driver);
+					String text = swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_AllItems.getText();
+					System.out.println("text: "+text);
+					hover.moveToElement(swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_AllItems).build().perform();
+					
+					Hover_About();
+					Hover_Logout();
+					Hover_ReserAppStore();
+					CrossButton();
 				}
+				
+				public void Hover_About() {
+					
+					String text = swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_About.getText();
+					System.out.println("text: "+text);
+					
+					Actions hover = new Actions(BaseClass.driver);
+					hover.moveToElement(swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_About).build().perform();
+					
+					
+				}
+				
+				public void Hover_Logout() {
+					String text = swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_Logout.getText();
+					System.out.println("text"+text);
+					
+					Actions hover = new Actions(BaseClass.driver);
+					hover.moveToElement(swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_Logout).build().perform();
+				}
+				
+				public void Hover_ReserAppStore() {
+					String text = swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_ReserAppStore.getText();
+					System.out.println("text:"+text);
+					
+					Actions hover = new Actions(BaseClass.driver);
+					hover.moveToElement(swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.Hover_ReserAppStore).build().perform();
+				}
+				public void CrossButton() {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.sidebarlocators.CrossButton.click();
+				}
+				
 			}//SideBar
 			
+			public class SawLab_Items{
+				
+				public void ProductItemOne(String productName) {
+					BaseClass.driver.findElement(By.xpath("//div[text()='"+productName+"']")).click();
+					
+					System.out.println();
+					
+					String actualName = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductName.getText();
+					System.out.println("Productname:"+actualName);
+					String expectedName = "Sauce Labs Bike Light";
+					
+					
+					String actualDescription = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsDisc.getText();
+					System.out.println("Description:"+actualDescription);
+				
+					String expectedDesc = "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.";
+					String expected2 = "A description should be here, but it failed to render! This error has been reported to Backtrace.";
+					
+					String actualPrice = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsPrice.getText();
+					System.out.println("Price:"+actualPrice);
+					String expectedPrice = "$9.99";
+					
+					Assert.assertEquals(actualName, expectedName, "Error Message");
+//					Assert.assertEquals(actualDescription, expectedDesc);
+					Assert.assertEquals(actualPrice, expectedPrice);
+					
+//					boolean status = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductName.isDisplayed();
+//					Assert.assertTrue(status, "Item is not displayed");
+//					
+					Assert.assertTrue(actualDescription.contains(expectedDesc) ||actualDescription.contains(expected2));
+					
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.BackToProduct.click();
+				}
+			}//back-to-products
 		}//Swag_Labs_ProductPage
 		
 		

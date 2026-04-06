@@ -58,13 +58,25 @@ public class Loginpage_Locators {
 		public class Swag_Labs_ProductPage{
 			
 			public SideBarLocators sidebarlocators;
+			public SwagLabs_Buttons swaglabs_buttons;
+			public SwagLabs_Items swaglabs_items;
 			public Swag_Labs_ProductPage() {
 				PageFactory.initElements(BaseClass.driver, this);
 				sidebarlocators = new SideBarLocators();
+				swaglabs_buttons = new SwagLabs_Buttons();
+				swaglabs_items = new SwagLabs_Items();
 			}
 			
-			@FindBy(id="react-burger-menu-btn")
-			public WebElement MenuButton;
+			public class SwagLabs_Buttons{
+				
+				public SwagLabs_Buttons() {
+					PageFactory.initElements(BaseClass.driver, this);
+				}
+				
+				@FindBy(id="react-burger-menu-btn")
+				public WebElement MenuButton;
+			}
+			
 			
 			public class SideBarLocators{
 				
@@ -72,10 +84,49 @@ public class Loginpage_Locators {
 					PageFactory.initElements(BaseClass.driver, this);
 				}
 				
-				@FindBy(id="inventory_sidebar_link")
-				public WebElement XXX;
+				@FindBy(xpath="//a[@id='inventory_sidebar_link']")
+				public WebElement Hover_AllItems;
+				
+				@FindBy(id="about_sidebar_link")
+				public WebElement Hover_About;
+				
+				@FindBy(id="logout_sidebar_link")
+				public WebElement Hover_Logout;
+				
+				@FindBy(id="reset_sidebar_link")
+				public WebElement Hover_ReserAppStore;
+				
+				@FindBy(id="react-burger-cross-btn")
+				public WebElement CrossButton;
 				
 			}//SidebarLocators
+			
+			public class SwagLabs_Items{
+				
+				public SwagLabs_Items() {
+					PageFactory.initElements(BaseClass.driver, this);
+				}
+				
+				
+				@FindBy(xpath="//div[@data-test='inventory-item-name']")
+				public WebElement ProductName;
+				
+				@FindBy(xpath="//div[@data-test='inventory-item-desc']")
+				public WebElement ProductsDisc;
+				
+				@FindBy(xpath="//div[@data-test='inventory-item-price']")
+				public WebElement ProductsPrice;
+				
+				
+				@FindBy(id="back-to-products")
+				public WebElement BackToProduct;
+				
+			}//SwagLabs_Items
+			
+			
+			
+			
+			
 			
 		}//Swag_Labs_ProductPage
 		
