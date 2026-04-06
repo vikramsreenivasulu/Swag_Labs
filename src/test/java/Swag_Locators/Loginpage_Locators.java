@@ -75,6 +75,9 @@ public class Loginpage_Locators {
 				
 				@FindBy(id="react-burger-menu-btn")
 				public WebElement MenuButton;
+				
+				@FindBy(xpath="//a[@data-test='shopping-cart-link']")
+				public WebElement Cart;
 			}
 			
 			

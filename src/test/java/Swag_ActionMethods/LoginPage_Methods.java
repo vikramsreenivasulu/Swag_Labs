@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -167,7 +168,16 @@ public class LoginPage_Methods {
 					Assert.assertTrue(actualDescription.contains(expectedDesc) ||actualDescription.contains(expected2));
 					
 					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.BackToProduct.click();
+				}//ProductItemOne
+				
+				public void AddToCart(String asdf){
+					
+					WebElement element = BaseClass.driver.findElement(By.xpath("//a[contains(.,'"+asdf+"')]/following::button[1]"));
+					element.click();
+					
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.Cart.click();
 				}
+				
 			}//back-to-products
 		}//Swag_Labs_ProductPage
 		

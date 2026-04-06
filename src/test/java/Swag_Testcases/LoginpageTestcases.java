@@ -28,7 +28,10 @@ public class LoginpageTestcases {
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.ClickMenuButton();
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.sidebarmethods.Hover_AllItems();
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.ProductItemOne("Sauce Labs Bike Light");
-		
+		BaseClass.Sleep();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.AddToCart("Sauce Labs Backpack");
+		BaseClass.Sleep();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.AddToCart("Sauce Labs Bolt T-Shirt");
 	
 		
 	}
