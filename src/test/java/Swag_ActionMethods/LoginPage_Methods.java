@@ -59,6 +59,12 @@ public class LoginPage_Methods {
 				 
 				}
 			
+				public void setUserName(String userName) {
+					
+					  swag_labs_locators.swag_labs_locators.swag_labs_loginpage.SendUserId.sendKeys(userName);
+					
+				}
+				
 			public void Password() {
 				String text = swag_labs_locators.swag_labs_locators.swag_labs_loginpage.Password.getText();
 				
@@ -138,10 +144,13 @@ public class LoginPage_Methods {
 			
 			public class SawLab_Items{
 				
-				public void ProductItemOne(String productName) {
+				
+				public void clickProductName(String productName) {
 					BaseClass.driver.findElement(By.xpath("//div[text()='"+productName+"']")).click();
-					
-					System.out.println();
+				}
+				
+				public void verifyProductName() {
+		
 					
 					String actualName = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductName.getText();
 					System.out.println("Productname:"+actualName);
@@ -167,17 +176,33 @@ public class LoginPage_Methods {
 //					
 					Assert.assertTrue(actualDescription.contains(expectedDesc) ||actualDescription.contains(expected2));
 					
-					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.BackToProduct.click();
+					
 				}//ProductItemOne
 				
-				public void AddToCart(String asdf){
+				
+				public void clickBackToProductButton() {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.BackToProduct.click();
+					
+				}
+				public void clickAddToCartButton(String asdf) throws InterruptedException{
 					
 					WebElement element = BaseClass.driver.findElement(By.xpath("//a[contains(.,'"+asdf+"')]/following::button[1]"));
+					BaseClass.Sleep();
 					element.click();
+				
 					
-					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.Cart.click();
+					
 				}
 				
+				public void clickCartIcon() {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.Cart.click();
+					
+				}
+				
+				public void ClickContinueShoppingBotton() {
+					
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.ContinueShoppingButton.click();
+				}
 			}//back-to-products
 		}//Swag_Labs_ProductPage
 		

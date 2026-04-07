@@ -78,6 +78,9 @@ public class Loginpage_Locators {
 				
 				@FindBy(xpath="//a[@data-test='shopping-cart-link']")
 				public WebElement Cart;
+				
+				@FindBy(id="continue-shopping")
+				public WebElement ContinueShoppingButton;
 			}
 			
 			
