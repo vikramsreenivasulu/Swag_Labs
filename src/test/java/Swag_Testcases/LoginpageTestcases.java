@@ -1,6 +1,5 @@
 package Swag_Testcases;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -33,17 +32,24 @@ public class LoginpageTestcases {
 		BaseClass.Sleep();
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.sidebarmethods.Hover_AllItems();
 		BaseClass.Sleep();
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.clickProductName("Sauce Labs Bike Light");
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.verifyProductName();
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.clickBackToProductButton();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.clickProductName("Sauce Labs Bike Light");
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.verifyProductName();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.clickBackToProductButton();
 		BaseClass.Sleep();
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.clickAddToCartButton("Sauce Labs Backpack");
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.clickCartIcon();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.clickAddToCartButton("Sauce Labs Backpack");
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.clickCartIcon();
 		BaseClass.Sleep();
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.ClickContinueShoppingBotton();
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.clickAddToCartButton("Sauce Labs Bolt T-Shirt");
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.sawlab_items.clickCartIcon();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.ClickContinueShoppingBotton();
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.clickAddToCartButton("Sauce Labs Bolt T-Shirt");
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.clickCartIcon();
 	
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyProductdetailsinCart(0);
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyProductdetailsinCart(1);
+
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.ClickCheckOut();
+		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.CheckOutDetails("vikram", "sreenivas", "517589");
+		
 		
 	}
 	

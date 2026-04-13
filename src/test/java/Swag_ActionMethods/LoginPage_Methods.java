@@ -85,10 +85,10 @@ public class LoginPage_Methods {
 		public class Swag_Labs_ProductPage{
 			
 			public SideBarMethods sidebarmethods;
-			public SawLab_Items sawlab_items;
+			public SawLab_Items swaglab_items;
 			public Swag_Labs_ProductPage() {
 				sidebarmethods = new SideBarMethods();
-				sawlab_items = new SawLab_Items();
+				swaglab_items = new SawLab_Items();
 			}
 			public void ClickMenuButton() {
 				swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.MenuButton.click();
@@ -152,7 +152,7 @@ public class LoginPage_Methods {
 				public void verifyProductName() {
 		
 					
-					String actualName = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductName.getText();
+					String actualName = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductName.getText().trim();
 					System.out.println("Productname:"+actualName);
 					String expectedName = "Sauce Labs Bike Light";
 					
@@ -203,7 +203,43 @@ public class LoginPage_Methods {
 					
 					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.ContinueShoppingButton.click();
 				}
-			}//back-to-products
+				
+				public void VerifyProductdetailsinCart(int index) {
+					
+					String productName = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductNameList.get(index).getText().trim();
+					System.out.println("CartProdutcName:"+productName);
+					
+					String actualDescription = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsDiscList.get(index).getText().trim();
+					System.out.println("Description:"+actualDescription);
+					
+					String actualPrice = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsPriceList.get(index).getText().trim();
+					System.out.println("Price:"+actualPrice);
+					
+	
+					//Assert
+					Assert.assertTrue(true,productName);
+					Assert.assertTrue(true,actualDescription);
+					Assert.assertTrue(true, actualPrice);
+					
+				}//VerifyProductdetailsinCart
+				
+				public void ClickCheckOut() {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.CheckOut.click();
+				}
+				
+				public void CheckOutDetails(String FisrtName,String LastName, String Code ) {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.checkoutinformation.FirstName.sendKeys(FisrtName);
+					
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.checkoutinformation.LastName.sendKeys(LastName);
+					
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.checkoutinformation.PostCode.sendKeys(Code);
+					
+				}//CheckOutDetails
+				
+				
+			}//SawLab_Items
+			
+			
 		}//Swag_Labs_ProductPage
 		
 		

@@ -60,11 +60,14 @@ public class Loginpage_Locators {
 			public SideBarLocators sidebarlocators;
 			public SwagLabs_Buttons swaglabs_buttons;
 			public SwagLabs_Items swaglabs_items;
+			
+			public CheckOutInformation checkoutinformation;
 			public Swag_Labs_ProductPage() {
 				PageFactory.initElements(BaseClass.driver, this);
 				sidebarlocators = new SideBarLocators();
 				swaglabs_buttons = new SwagLabs_Buttons();
 				swaglabs_items = new SwagLabs_Items();
+				checkoutinformation = new CheckOutInformation();
 			}
 			
 			public class SwagLabs_Buttons{
@@ -81,6 +84,9 @@ public class Loginpage_Locators {
 				
 				@FindBy(id="continue-shopping")
 				public WebElement ContinueShoppingButton;
+				
+				@FindBy(id="checkout")
+				public WebElement CheckOut;
 			}
 			
 			
@@ -115,6 +121,15 @@ public class Loginpage_Locators {
 				
 				
 				@FindBy(xpath="//div[@data-test='inventory-item-name']")
+				public List<WebElement> ProductNameList;
+				
+				@FindBy(xpath="//div[@data-test='inventory-item-desc']")
+				public List<WebElement> ProductsDiscList;
+				
+				@FindBy(xpath="//div[@data-test='inventory-item-price']")
+				public List<WebElement> ProductsPriceList;
+				
+				@FindBy(xpath="//div[@data-test='inventory-item-name']")
 				public WebElement ProductName;
 				
 				@FindBy(xpath="//div[@data-test='inventory-item-desc']")
@@ -130,14 +145,29 @@ public class Loginpage_Locators {
 			}//SwagLabs_Items
 			
 			
+			public class CheckOutInformation{
+				
+				public CheckOutInformation() {
+					PageFactory.initElements(BaseClass.driver, this);
+				}
+				
+				@FindBy(id="first-name")
+				public WebElement FirstName;
+				
+				@FindBy(id="last-name")
+				public WebElement LastName;
+				
+				@FindBy(id="postal-code")
+				public WebElement PostCode;			
 			
 			
-			
-			
+			}//Swag_Labs_ProductPage
+		
+
 		}//Swag_Labs_ProductPage
 		
 		
-		
-		
 	}//Swag_Labs_Locators
-}
+	
+	
+}//Loginpage_Locators
