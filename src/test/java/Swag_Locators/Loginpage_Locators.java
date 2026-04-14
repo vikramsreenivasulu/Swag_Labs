@@ -64,13 +64,16 @@ public class Loginpage_Locators {
 			public CheckOutInformation checkoutinformation;
 			
 			public VerifyOverviewDetails verifyoverviewdetails;
+			public ProductOrdered productordered;
 			public Swag_Labs_ProductPage() {
+				
 				PageFactory.initElements(BaseClass.driver, this);
 				sidebarlocators = new SideBarLocators();
 				swaglabs_buttons = new SwagLabs_Buttons();
 				swaglabs_items = new SwagLabs_Items();
 				checkoutinformation = new CheckOutInformation();
 				verifyoverviewdetails = new VerifyOverviewDetails();
+				productordered = new ProductOrdered();
 			}
 			
 			public class SwagLabs_Buttons{
@@ -199,6 +202,15 @@ public class Loginpage_Locators {
 				
 			}//VerifyOverviewDetails
 			
+			public class ProductOrdered{
+				
+				public ProductOrdered() {
+					PageFactory.initElements(BaseClass.driver, this);
+				}
+				
+				@FindBy(xpath="//h2[@data-test='complete-header']")
+				public WebElement ThnxOrder;
+			}
 		}//Swag_Labs_ProductPage
 		
 		
