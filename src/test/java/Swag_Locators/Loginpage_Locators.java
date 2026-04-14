@@ -62,12 +62,15 @@ public class Loginpage_Locators {
 			public SwagLabs_Items swaglabs_items;
 			
 			public CheckOutInformation checkoutinformation;
+			
+			public VerifyOverviewDetails verifyoverviewdetails;
 			public Swag_Labs_ProductPage() {
 				PageFactory.initElements(BaseClass.driver, this);
 				sidebarlocators = new SideBarLocators();
 				swaglabs_buttons = new SwagLabs_Buttons();
 				swaglabs_items = new SwagLabs_Items();
 				checkoutinformation = new CheckOutInformation();
+				verifyoverviewdetails = new VerifyOverviewDetails();
 			}
 			
 			public class SwagLabs_Buttons{
@@ -90,6 +93,9 @@ public class Loginpage_Locators {
 				
 				@FindBy(id="continue")
 				public WebElement ContinueButton;
+				
+				@FindBy(id="finish")
+				public WebElement FinishButton;
 			}
 			
 			
@@ -164,9 +170,35 @@ public class Loginpage_Locators {
 				public WebElement PostCode;			
 			
 			
-			}//Swag_Labs_ProductPage
+			}//CheckOutInformation
 		
 
+			public class VerifyOverviewDetails{
+				
+				public VerifyOverviewDetails() {
+					PageFactory.initElements(BaseClass.driver, this);
+				}
+				
+				@FindBy(xpath="//div[contains(@class,'inventory_item_name')]")
+				public List<WebElement> ProductName;
+				
+				@FindBy(xpath="//div[contains(@class,'inventory_item_desc')]")
+				public List<WebElement> Discription;
+				
+				@FindBy(xpath="//div[contains(@class,'inventory_item_price')]")
+				public List<WebElement> Price;
+				
+				@FindBy(xpath="//div[@data-test='payment-info-value']")
+				public WebElement PaymentInformation;
+				
+				@FindBy(xpath="//div[@data-test='shipping-info-value']")
+				public WebElement ShippingInformation;
+				
+				@FindBy(xpath="//div[@data-test='total-label']")
+				public WebElement TotalPrice;
+				
+			}//VerifyOverviewDetails
+			
 		}//Swag_Labs_ProductPage
 		
 		

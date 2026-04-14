@@ -51,6 +51,17 @@ public class LoginpageTestcases {
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.CheckOutDetails("vikram", "sreenivas", "517589");
 		
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.ClickContinueButton();
+		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyOverDetails();
+		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.PaymentInformation();
+		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.ShippingInformation();
+		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.TotalPrice();
+		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.ClickFinishButton();
+		
 	}
 	
 }//LoginpageTestcases
