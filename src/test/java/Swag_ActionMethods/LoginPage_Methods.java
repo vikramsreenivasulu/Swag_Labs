@@ -236,7 +236,9 @@ public class LoginPage_Methods {
 					
 				}//CheckOutDetails
 				
-				
+				public void ClickContinueButton() {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.ContinueButton.click();
+				}
 			}//SawLab_Items
 			
 			

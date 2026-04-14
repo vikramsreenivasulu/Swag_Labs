@@ -50,7 +50,7 @@ public class LoginpageTestcases {
 		
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.CheckOutDetails("vikram", "sreenivas", "517589");
 		
-		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.ClickContinueButton();
 	}
 	
 }//LoginpageTestcases

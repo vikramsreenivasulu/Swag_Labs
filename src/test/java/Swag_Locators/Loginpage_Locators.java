@@ -87,6 +87,9 @@ public class Loginpage_Locators {
 				
 				@FindBy(id="checkout")
 				public WebElement CheckOut;
+				
+				@FindBy(id="continue")
+				public WebElement ContinueButton;
 			}
 			
 			
