@@ -210,6 +210,9 @@ public class Loginpage_Locators {
 				
 				@FindBy(xpath="//h2[@data-test='complete-header']")
 				public WebElement ThnxOrder;
+				
+				@FindBy(id="back-to-products")
+				public WebElement BackHome;
 			}
 		}//Swag_Labs_ProductPage
 		

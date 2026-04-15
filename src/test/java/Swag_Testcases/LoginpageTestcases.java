@@ -64,6 +64,8 @@ public class LoginpageTestcases {
 		
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyThnxOrder();
 		
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.ClickBackHome();
+		
 	}
 	
 }//LoginpageTestcases

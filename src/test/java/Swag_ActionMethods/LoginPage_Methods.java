@@ -336,6 +336,10 @@ public class LoginPage_Methods {
 					String OrderConfirmation = swag_labs_locators.swag_labs_locators.swag_labs_productpage.productordered.ThnxOrder.getText();
 					System.out.println("OrderConfirmation:"+OrderConfirmation);
 				}
+				
+				public void ClickBackHome() {
+					swag_labs_locators.swag_labs_locators.swag_labs_productpage.productordered.BackHome.click();
+				}
 			}// SawLab_Items
 
 		}// Swag_Labs_ProductPage
