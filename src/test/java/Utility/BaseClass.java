@@ -58,4 +58,8 @@ public class BaseClass {
 		// TODO Auto-generated method stub
 		Thread.sleep(2000);
 	}
+	
+	public static void StopDriver(){
+		driver.quit();
+	}
 }

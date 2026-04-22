@@ -7,6 +7,7 @@
         <methods>
           <include name="Attest"/>
           <include name="Beforesuit"/>
+          <include name="AfterSuite"/>
         </methods>
       </class> <!-- Swag_Testcases.LoginpageTestcases -->
     </classes>

@@ -2,19 +2,52 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-15T14:00:24 IST" name="Default suite" finished-at="2026-04-15T14:00:52 IST" duration-ms="28146">
+  <suite started-at="2026-04-21T17:08:18 IST" name="Default suite" finished-at="2026-04-21T17:08:40 IST" duration-ms="22586">
     <groups>
     </groups>
-    <test started-at="2026-04-15T14:00:24 IST" name="Default test" finished-at="2026-04-15T14:00:52 IST" duration-ms="28146">
+    <test started-at="2026-04-21T17:08:18 IST" name="Default test" finished-at="2026-04-21T17:08:40 IST" duration-ms="22586">
       <class name="Swag_Testcases.LoginpageTestcases">
-        <test-method is-config="true" signature="Beforesuit()[pri:0, instance:Swag_Testcases.LoginpageTestcases@4116aac9]" started-at="2026-04-15T14:00:10 IST" name="Beforesuit" finished-at="2026-04-15T14:00:24 IST" duration-ms="14306" status="PASS">
+        <test-method is-config="true" signature="Beforesuit()[pri:0, instance:Swag_Testcases.LoginpageTestcases@4d1c00d0]" started-at="2026-04-21T17:07:47 IST" name="Beforesuit" finished-at="2026-04-21T17:08:18 IST" duration-ms="30955" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Beforesuit -->
-        <test-method signature="Attest()[pri:0, instance:Swag_Testcases.LoginpageTestcases@4116aac9]" started-at="2026-04-15T14:00:24 IST" name="Attest" finished-at="2026-04-15T14:00:52 IST" duration-ms="28079" status="PASS">
+        <test-method signature="Attest()[pri:0, instance:Swag_Testcases.LoginpageTestcases@4d1c00d0]" started-at="2026-04-21T17:08:18 IST" name="Attest" finished-at="2026-04-21T17:08:40 IST" duration-ms="22553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Attest -->
+        <test-method is-config="true" signature="AfterSuite(org.testng.ITestResult)[pri:0, instance:Swag_Testcases.LoginpageTestcases@4d1c00d0]" started-at="2026-04-21T17:08:40 IST" name="AfterSuite" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1776771520754" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Native Injection is NOT supported for @AfterSuite annotated AfterSuite.
+For more information on native dependency injection please refer to https://testng.org/#_dependency_injection]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Native Injection is NOT supported for @AfterSuite annotated AfterSuite.
+For more information on native dependency injection please refer to https://testng.org/#_dependency_injection
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:442)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:347)
+at org.testng.internal.Parameters.createParameters(Parameters.java:699)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:163)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:313)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:386)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterSuite -->
       </class> <!-- Swag_Testcases.LoginpageTestcases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
