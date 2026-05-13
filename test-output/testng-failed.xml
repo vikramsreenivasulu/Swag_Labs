@@ -5,9 +5,9 @@
     <classes>
       <class name="Swag_Testcases.LoginpageTestcases">
         <methods>
-          <include name="Attest"/>
           <include name="Beforesuit"/>
           <include name="AfterSuite"/>
+          <include name="Attest"/>
         </methods>
       </class> <!-- Swag_Testcases.LoginpageTestcases -->
     </classes>

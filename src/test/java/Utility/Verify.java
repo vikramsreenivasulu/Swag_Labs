@@ -22,7 +22,7 @@ public class Verify {
 			Report.pass("Expected: " +expected +" || "+"Actual: "+actual);
 			System.out.println(" Passed");
 		} else {
-			Report.fail("Expected: " +expected +" || "+"Actual: "+actual);
+			Report.failBase64("Expected: " +expected +" || "+"Actual: "+actual);
 			System.out.println(" Failed");
 	
 		}

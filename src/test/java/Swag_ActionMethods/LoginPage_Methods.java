@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import Swag_Locators.Loginpage_Locators;
 import Utility.BaseClass;
+import Utility.Verify;
 
 public class LoginPage_Methods {
 
@@ -163,36 +164,36 @@ public class LoginPage_Methods {
 					BaseClass.driver.findElement(By.xpath("//div[text()='" + productName + "']")).click();
 				}
 
-				public void verifyProductName() {
+				public void verifyProductName(String expectedName) {
 
 					String actualName = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductName
 							.getText().trim();
 					System.out.println("Productname:" + actualName);
-					String expectedName = "Sauce Labs Bike Light";
-
+					//String expectedName = "Sauce Labs Bike Light";
+					
+					Verify.verifyEquals(actualName, expectedName);
+				}
+				
+				public void VerifyDescription(String expected2) {
 					String actualDescription = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsDisc
 							.getText();
 					System.out.println("Description:" + actualDescription);
 
-					String expectedDesc = "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.";
-					String expected2 = "A description should be here, but it failed to render! This error has been reported to Backtrace.";
-
+					//String expectedDesc = "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.";
+					//String expected2 = "A description should be here, but it failed to render! This error has been reported to Backtrace.";
+					
+					Verify.verifyEquals(actualDescription, expected2);
+				}
+					
+				public void VeirfyPrice(String expectedPrice) {
 					String actualPrice = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsPrice
 							.getText();
 					System.out.println("Price:" + actualPrice);
-					String expectedPrice = "$9.99";
+					//String expectedPrice = "$9.99";
+					
+					Verify.verifyEquals(actualPrice, expectedPrice);
+				}
 
-					Assert.assertEquals(actualName, expectedName, "Error Message");
-//					Assert.assertEquals(actualDescription, expectedDesc);
-					Assert.assertEquals(actualPrice, expectedPrice);
-
-//					boolean status = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductName.isDisplayed();
-//					Assert.assertTrue(status, "Item is not displayed");
-//					
-					Assert.assertTrue(
-							actualDescription.contains(expectedDesc) || actualDescription.contains(expected2));
-
-				}// ProductItemOne
 
 				public void clickBackToProductButton() {
 					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.BackToProduct.click();
@@ -219,26 +220,42 @@ public class LoginPage_Methods {
 							.click();
 				}
 
-				public void VerifyProductdetailsinCart(int index) {
+	
 
+				public void Verifyproductname(int index,String Expected) {
 					String productName = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductNameList
 							.get(index).getText().trim();
 					System.out.println("CartProdutcName:" + productName);
 
+					Verify.verifyEquals(productName, Expected);
+				}
+
+				public void VerifyproductDiscription(int index,String Expected) {
 					String actualDescription = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsDiscList
 							.get(index).getText().trim();
 					System.out.println("Description:" + actualDescription);
+					
+					Verify.verifyEquals(actualDescription, Expected);
+				}
 
+				public void VerifyproductPrice(int index, String Expected) {
 					String actualPrice = swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_items.ProductsPriceList
 							.get(index).getText().trim();
 					System.out.println("Price:" + actualPrice);
+					
+					Verify.verifyEquals(actualPrice, Expected);
+				}
+					
 
-					// Assert
-					Assert.assertTrue(true, productName);
-					Assert.assertTrue(true, actualDescription);
-					Assert.assertTrue(true, actualPrice);
+					
 
-				}// VerifyProductdetailsinCart
+					
+
+				
+				
+				
+				
+				
 
 				public void ClickCheckOut() {
 					swag_labs_locators.swag_labs_locators.swag_labs_productpage.swaglabs_buttons.CheckOut.click();
