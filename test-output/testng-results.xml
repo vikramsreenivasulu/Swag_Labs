@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-13T18:19:39 IST" name="Default suite" finished-at="2026-05-13T18:19:53 IST" duration-ms="13880">
+  <suite started-at="2026-05-14T18:24:27 IST" name="Default suite" finished-at="2026-05-14T18:25:00 IST" duration-ms="33187">
     <groups>
     </groups>
-    <test started-at="2026-05-13T18:19:39 IST" name="Default test" finished-at="2026-05-13T18:19:53 IST" duration-ms="13880">
+    <test started-at="2026-05-14T18:24:27 IST" name="Default test" finished-at="2026-05-14T18:25:00 IST" duration-ms="33187">
       <class name="Swag_Testcases.LoginpageTestcases">
-        <test-method is-config="true" signature="Beforesuit()[pri:0, instance:Swag_Testcases.LoginpageTestcases@34e9fd99]" started-at="2026-05-13T18:19:39 IST" name="Beforesuit" finished-at="2026-05-13T18:19:43 IST" duration-ms="3479" status="PASS">
+        <test-method is-config="true" signature="Beforesuit()[pri:0, instance:Swag_Testcases.LoginpageTestcases@34e9fd99]" started-at="2026-05-14T18:24:27 IST" name="Beforesuit" finished-at="2026-05-14T18:24:32 IST" duration-ms="4594" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Beforesuit -->
-        <test-method signature="Attest()[pri:0, instance:Swag_Testcases.LoginpageTestcases@34e9fd99]" started-at="2026-05-13T18:19:43 IST" name="Attest" finished-at="2026-05-13T18:19:52 IST" duration-ms="9345" status="FAIL">
+        <test-method signature="Attest()[pri:0, instance:Swag_Testcases.LoginpageTestcases@34e9fd99]" started-at="2026-05-14T18:24:32 IST" name="Attest" finished-at="2026-05-14T18:24:58 IST" duration-ms="26630" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-expected [sSauce Labs Bike Light] but found [Sauce Labs Bike Light]]]>
+expected [$115.99] but found [$15.99]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [sSauce Labs Bike Light] but found [Sauce Labs Bike Light]
+expected [$115.99] but found [$15.99]
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
 at Utility.Verify.assertAll(Verify.java:16)
@@ -56,7 +56,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Attest -->
-        <test-method is-config="true" signature="AfterSuite(org.testng.ITestResult)[pri:0, instance:Swag_Testcases.LoginpageTestcases@34e9fd99]" started-at="2026-05-13T18:19:52 IST" name="AfterSuite" finished-at="2026-05-13T18:19:53 IST" duration-ms="1015" status="PASS">
+        <test-method is-config="true" signature="AfterSuite(org.testng.ITestResult)[pri:0, instance:Swag_Testcases.LoginpageTestcases@34e9fd99]" started-at="2026-05-14T18:24:58 IST" name="AfterSuite" finished-at="2026-05-14T18:25:00 IST" duration-ms="1910" status="PASS">
           <params>
             <param index="0">
               <value>

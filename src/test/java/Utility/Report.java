@@ -221,8 +221,9 @@ public class Report {
 	public static void getResult(ITestResult result) {
 
 	    String errorMessage = "";
+	    int status = result.getStatus();
 
-//	    if (testResult != null && testResult.getThrowable() != null) {
+	    if (status == ITestResult.FAILURE) {
 
 	        errorMessage = result.getThrowable().getMessage();
 
@@ -238,21 +239,30 @@ public class Report {
 	        
 
         	extentTest.fail(MarkupHelper.createCodeBlock(ExceptionUtils.getStackTrace(result.getThrowable())));
-//	        node.fail(
-//	            "<div style='padding:10px; border-radius:8px; " +
-//	            "background:#2b1d1d; border-left:4px solid #ff4c4c; " +
-//	            "color:#ffffff; font-size:14px; margin-bottom:10px;'>" +
-//	            "<b>ERROR :</b><br>" +
-//	            errorMessage +
-//	            "</div>"
-//	        );
+
         	extentTest.addScreenCaptureFromPath(screenshotPath);
-//	        node.fail(
-//	            "Failure Screenshot",
-//	            MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build()
-//	        );
-	    }
-//	}
+
+	    } else if (status == ITestResult.SKIP) {
+
+			String methodName = result.getMethod().getMethodName();
+
+			extentTest.log(Status.SKIP,
+					MarkupHelper.createLabel(
+							"<b>" + methodName + "----> SKIPPED" + "+_____________________+Ran on Local--->" + methodName,
+							ExtentColor.ORANGE));
+
+			extentTest.skip(testResult.getThrowable());
+
+		} else if (status == ITestResult.SUCCESS) {
+
+			String methodName = result.getMethod().getMethodName();
+
+			extentTest.log(Status.PASS,
+					MarkupHelper.createLabel(
+							"<b>" + methodName + "----> PASSED" + "+_____________________+Ran on Local--->" + methodName,
+							ExtentColor.GREEN));
+		}
+	}
 
 	
 

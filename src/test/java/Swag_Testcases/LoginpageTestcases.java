@@ -53,7 +53,7 @@ public class LoginpageTestcases {
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items
 				.clickProductName("Sauce Labs Bike Light");
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items
-				.verifyProductName("sSauce Labs Bike Light");
+				.verifyProductName("Sauce Labs Bike Light");
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyDescription(
 				"A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.");
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VeirfyPrice("$9.99");
@@ -70,7 +70,7 @@ public class LoginpageTestcases {
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.clickCartIcon();
 
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.Verifyproductname(0,
-				"auce Labs Backpack");
+				"Sauce Labs Backpack");
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyproductDiscription(0,
 				"carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.");
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyproductPrice(0, "$29.99");
@@ -79,7 +79,7 @@ public class LoginpageTestcases {
 				"Sauce Labs Bolt T-Shirt");
 		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyproductDiscription(1,
 				"Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.");
-		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyproductPrice(1, "$15.99");
+		loginpage_methods.swag_labs_methods.swag_labs_productpage.swaglab_items.VerifyproductPrice(1, "$115.99");
 
 		Report.pass("Cart Deatails Verified");
 		Report.logInfo("Verify_Cart_Details");
