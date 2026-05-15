@@ -188,6 +188,12 @@ public class Report {
 		node.fail("Screenshot on failure:",
 				MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
 	}
+	
+	public static void screenshotBase64InTest() {
+		String base64Screenshot = ((TakesScreenshot) BaseClass.driver).getScreenshotAs(OutputType.BASE64);
+		extentTest.fail("Screenshot on failure:",
+				MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+	}
 
 	public static void failBase64(String fail) {
 		String styledMessage = "<b><span style='color:#ff4c4c;'>" + fail + "</span></b>";
@@ -220,47 +226,33 @@ public class Report {
 
 	public static void getResult(ITestResult result) {
 
-	    String errorMessage = "";
-	    int status = result.getStatus();
+		String errorMessage = "";
+		int status = result.getStatus();
 
-	    if (status == ITestResult.FAILURE) {
+		if (status == ITestResult.FAILURE) {
 
-	        errorMessage = result.getThrowable().getMessage();
+			errorMessage = result.getThrowable().getMessage();
 
-	        System.out.println(errorMessage);
-	        String timeStamp = LocalDateTime.now()
-	                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
+			System.out.println(errorMessage);
+			screenshotBase64InTest();
+			extentTest.log(Status.FAIL, MarkupHelper.createLabel(errorMessage, ExtentColor.RED));
+			extentTest.fail(MarkupHelper.createCodeBlock(ExceptionUtils.getStackTrace(result.getThrowable())));
 
-	        String fileName = "Error_" + timeStamp;
-
-	        String screenshotPath = caputreScreenshot(fileName);
-
-	        extentTest.log(Status.FAIL,  MarkupHelper.createLabel(errorMessage, ExtentColor.RED));
-	        
-
-        	extentTest.fail(MarkupHelper.createCodeBlock(ExceptionUtils.getStackTrace(result.getThrowable())));
-
-        	extentTest.addScreenCaptureFromPath(screenshotPath);
-
-	    } else if (status == ITestResult.SKIP) {
+		} else if (status == ITestResult.SKIP) {
 
 			String methodName = result.getMethod().getMethodName();
-
 			extentTest.log(Status.SKIP,
 					MarkupHelper.createLabel(
-							"<b>" + methodName + "----> SKIPPED" + "+_____________________+Ran on Local--->" + methodName,
-							ExtentColor.ORANGE));
+							"<b>" + methodName+ "----> SKIPPED"+ "+_____________________+Ran on Local--->"+ methodName,ExtentColor.ORANGE));
 
-			extentTest.skip(testResult.getThrowable());
+			extentTest.skip(result.getThrowable());
 
 		} else if (status == ITestResult.SUCCESS) {
 
 			String methodName = result.getMethod().getMethodName();
-
 			extentTest.log(Status.PASS,
 					MarkupHelper.createLabel(
-							"<b>" + methodName + "----> PASSED" + "+_____________________+Ran on Local--->" + methodName,
-							ExtentColor.GREEN));
+							"<b>" + methodName+ "----> PASSED"+ "+_____________________+Ran on Local--->"+ methodName,ExtentColor.GREEN));
 		}
 	}
 
